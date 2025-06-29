@@ -1,0 +1,214 @@
+<div class="about-grid grid-2">
+    <div class="about-text fade-in">
+        <h3>Transforming Businesses Since 2015</h3>
+        <p>Aureon Tech is a leading provider of innovative IT solutions, empowering businesses worldwide to achieve digital transformation and operational excellence.</p>
+        
+        <div class="about-features">
+            <div class="feature-item">
+                <i data-lucide="shield-check" class="feature-icon"></i>
+                <div>
+                    <h4>Enterprise Security</h4>
+                    <p>Advanced cybersecurity solutions protecting your digital assets.</p>
+                </div>
+            </div>
+            
+            <div class="feature-item">
+                <i data-lucide="cloud" class="feature-icon"></i>
+                <div>
+                    <h4>Cloud Excellence</h4>
+                    <p>Scalable cloud infrastructure tailored to your business needs.</p>
+                </div>
+            </div>
+            
+            <div class="feature-item">
+                <i data-lucide="users" class="feature-icon"></i>
+                <div>
+                    <h4>Expert Team</h4>
+                    <p>Certified professionals with decades of combined experience.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="about-carousel carousel fade-in">
+        <div class="carousel-container">
+            <div class="carousel-slide">
+                <div class="slide-content">
+                    <h4>Our Mission</h4>
+                    <p>To empower businesses through innovative technology solutions that drive growth, efficiency, and competitive advantage in the digital age.</p>
+                    <div class="stats-grid">
+                        <div class="stat-item">
+                            <span class="counter" data-target="500">0</span>
+                            <span class="stat-label">Projects Completed</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="counter" data-target="50">0</span>
+                            <span class="stat-label">Enterprise Clients</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="carousel-slide">
+                <div class="slide-content">
+                    <h4>Our Vision</h4>
+                    <p>To be the most trusted technology partner, delivering cutting-edge solutions that transform how businesses operate and compete globally.</p>
+                    <div class="stats-grid">
+                        <div class="stat-item">
+                            <span class="counter" data-target="99">0</span>
+                            <span class="stat-label">% Client Satisfaction</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="counter" data-target="24">0</span>
+                            <span class="stat-label">/ 7 Support</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="carousel-slide">
+                <div class="slide-content">
+                    <h4>Our Values</h4>
+                    <p>Innovation, integrity, and excellence drive everything we do. We believe in building lasting partnerships through exceptional service and results.</p>
+                    <div class="stats-grid">
+                        <div class="stat-item">
+                            <span class="counter" data-target="8">0</span>
+                            <span class="stat-label">Years Experience</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="counter" data-target="15">0</span>
+                            <span class="stat-label">Industry Awards</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="carousel-controls">
+            <button class="carousel-btn carousel-prev">
+                <i data-lucide="chevron-left"></i>
+            </button>
+            <button class="carousel-btn carousel-next">
+                <i data-lucide="chevron-right"></i>
+            </button>
+        </div>
+        
+        <div class="carousel-indicators">
+            <div class="indicator active"></div>
+            <div class="indicator"></div>
+            <div class="indicator"></div>
+        </div>
+    </div>
+</div>
+
+<style>
+.about-grid {
+    align-items: center;
+    gap: 3rem;
+}
+
+.about-text h3 {
+    color: var(--text-primary);
+    margin-bottom: 1.5rem;
+}
+
+.about-features {
+    margin-top: 2rem;
+}
+
+.feature-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.feature-icon {
+    width: 24px;
+    height: 24px;
+    color: var(--primary-color);
+    flex-shrink: 0;
+    margin-top: 0.25rem;
+}
+
+.feature-item h4 {
+    color: var(--text-primary);
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+}
+
+.feature-item p {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    margin: 0;
+}
+
+.about-carousel {
+    background: var(--dark-card);
+    border: 1px solid var(--dark-border);
+    border-radius: var(--border-radius);
+    padding: 2rem;
+    height: 400px;
+}
+
+.slide-content {
+    text-align: center;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.slide-content h4 {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+}
+
+.slide-content p {
+    color: var(--text-secondary);
+    margin-bottom: 2rem;
+    max-width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
+
+.stat-item {
+    text-align: center;
+}
+
+.counter {
+    display: block;
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+}
+
+.stat-label {
+    color: var(--text-secondary);
+    font-size: 0.875rem;
+}
+
+@media (max-width: 768px) {
+    .about-grid {
+        gap: 2rem;
+    }
+    
+    .about-carousel {
+        padding: 1.5rem;
+        height: 350px;
+    }
+    
+    .stats-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+}
+</style>

@@ -1,0 +1,90 @@
+🎯 Project Title: Aureon Tech – Professional IT Solutions Company Website
+
+💻 Tech Stack:
+• HTML5 – Semantic markup
+• CSS3 – Modular styles using BEM or utility classes
+• Vanilla JavaScript – With ES6 Modules
+• Responsive – Flexbox, Grid
+• Icons – Lucide Icons, Feather Icons, SVGs
+• Fonts – Google Fonts (e.g., Inter, Roboto, Poppins)
+• Assets – Official company logos, tech icons from open-source packs
+
+📁 Folder Structure:
+
+/aureon-tech/
+│
+├── index.html               # Main homepage
+├── /css/
+│   ├── style.css            # Global styles
+│   └── components.css       # Cards, buttons, effects
+├── /js/
+│   ├── main.js              # Entry point
+│   ├── modules/
+│   │   ├── navbar.js        # Sticky nav + side indicator
+│   │   ├── about.js         # About section + carousel
+│   │   ├── services.js      # Core solution cards + animations
+│   │   ├── showcase.js      # Product showcase carousel/table
+│   │   ├── contact.js       # Contact form logic
+│   │   └── scroll.js        # Section reveal on scroll
+├── /assets/
+│   ├── /icons/              # SVGs, Lucide, Feather icons
+│   ├── /logos/              # Microsoft, Adobe, Zoho, Salesforce etc.
+│   └── /images/             # Backgrounds, particles, decor
+├── /components/
+│   ├── navbar.html          # Sticky navbar with sections
+│   ├── about.html           # Company intro, mission, USP
+│   ├── services.html        # Expandable cards
+│   ├── showcase.html        # Real-world examples
+│   ├── contact.html         # Form with validation + Google Map
+│   └── footer.html          # Social icons + CTA
+└── README.md                # Project instructions
+
+📌 Features to Implement:
+✔ Animated section reveals (IntersectionObserver in scroll.js)
+✔ Expandable/flip cards for services
+✔ Carousel for product showcase using only JS
+✔ Sticky scroll indicator on side (highlights section)
+✔ Glowing neon CTA buttons
+✔ Icon animations on hover
+✔ Responsive layout (mobile-friendly)
+✔ Smooth transitions for user experience
+
+📦 Assets to Import:
+• [Lucide Icons](https://lucide.dev/icons/)
+• [Feather Icons](https://feathericons.com/)
+• [Google Fonts](https://fonts.google.com/)
+• [Official company logos from press/media kits]
+
+📋 Suggested Modules to Start With:
+1. `/components/navbar.html` → Sticky top nav with section anchors
+2. `/components/services.html` → Each card links to a sub-section or hover-expand
+3. `/components/showcase.html` → Table of top tech companies and their products
+4. `/components/contact.html` → Includes form, validation, Google Maps iframe
+5. `/js/scroll.js` → Reveals sections smoothly on scroll
+6. `/js/services.js` → Handles hover effects, flip cards
+
+🧠 Pro Tip:
+Use Web Components (optional) or JS template rendering for `<include>`-like behavior since you’re not using a framework.
+
+📍 Deployment on Replit:
+1. Create a new HTML/CSS/JS Replit project
+2. Set `index.html` as the starting file
+3. Import all folders: `/css/`, `/js/`, `/assets/`, `/components/`
+4. Use `fetch('/components/about.html')` to dynamically load HTML snippets if needed
+5. Enable Live Preview
+
+🌐 Page Sections on Homepage:
+1. Hero Section – Tagline, CTA, glowing animated text
+2. About Aureon Tech – Carousel + USPs
+3. Core Solutions – Clickable/hoverable cards with icons
+4. Product Showcase – Real-world IT company examples
+5. Let’s Work Together – CTA with glowing buttons
+6. Contact Form – Styled + map integration
+7. Footer – Social links, copyright
+
+💡 Optional Effects:
+• Glitch text animation using CSS keyframes
+• Particle JS background or subtle SVG blob animations
+• ScrollSpy (highlighting active section)
+• Flip card effect for sub-services using 3D CSS
+
