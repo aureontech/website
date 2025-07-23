@@ -68,50 +68,112 @@ const initContactForm = () => {
         });
     });
 
-    // Form submission
-    const handleSubmit = async (e) => {
-        e.preventDefault();
+    // // Form submission
+    // const handleSubmit = async (e) => {
+    //     e.preventDefault();
 
-        // Validate all fields
-        let isValid = true;
+    //     // Validate all fields
+    //     let isValid = true;
+    //     formFields.forEach(field => {
+    //         if (!validateField(field)) {
+    //             isValid = false;
+    //         }
+    //     });
+
+    //     if (!isValid) {
+    //         showNotification('Please fix the errors before submitting', 'error');
+    //         return;
+    //     }
+
+    //     // Show loading state
+    //     const originalText = submitBtn.textContent;
+    //     submitBtn.textContent = 'Sending...';
+    //     submitBtn.disabled = true;
+    //     submitBtn.classList.add('loading');
+
+    //     try {
+    //         // Simulate form submission (replace with actual API call)
+    //         await simulateFormSubmission(new FormData(form));
+            
+    //         // Success
+    //         showNotification('Message sent successfully! We\'ll get back to you soon.', 'success');
+    //         form.reset();
+    //         formFields.forEach(field => {
+    //             field.parentNode.classList.remove('focused');
+    //             field.classList.remove('error');
+    //         });
+
+    //     } catch (error) {
+    //         showNotification('Failed to send message. Please try again.', 'error');
+    //     } finally {
+    //         // Reset button state
+    //         submitBtn.textContent = originalText;
+    //         submitBtn.disabled = false;
+    //         submitBtn.classList.remove('loading');
+    //     }
+    // };
+
+    // Form submission
+const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    // Validate all fields
+    let isValid = true;
+    formFields.forEach(field => {
+        if (!validateField(field)) {
+            isValid = false;
+        }
+    });
+
+    if (!isValid) {
+        showNotification('Please fix the errors before submitting', 'error');
+        return;
+    }
+
+    // Show loading state
+    const originalText = submitBtn.textContent;
+    submitBtn.textContent = 'Sending...';
+    submitBtn.disabled = true;
+    submitBtn.classList.add('loading');
+
+    try {
+        const formData = new FormData(form);
+
+        const data = {
+            name: formData.get('name'),
+            email: formData.get('email'),
+            phone: formData.get('phone'),
+            company: formData.get('company'),
+            service: formData.get('service'),
+            message: formData.get('message'),
+            newsletter: formData.get('newsletter') ? 'Yes' : 'No',
+            privacy: formData.get('privacy') ? 'Agreed' : 'Not Agreed'
+        };
+
+        // EmailJS config
+        const serviceID = 'service_5xosvlh';     // e.g., service_xxxx
+        const templateID = 'template_l3er2wr';   // e.g., template_yyyy
+
+        await emailjs.send(serviceID, templateID, data);
+
+        // Success
+        showNotification('Message sent successfully! We\'ll get back to you soon.', 'success');
+        form.reset();
         formFields.forEach(field => {
-            if (!validateField(field)) {
-                isValid = false;
-            }
+            field.parentNode.classList.remove('focused');
+            field.classList.remove('error');
         });
 
-        if (!isValid) {
-            showNotification('Please fix the errors before submitting', 'error');
-            return;
-        }
-
-        // Show loading state
-        const originalText = submitBtn.textContent;
-        submitBtn.textContent = 'Sending...';
-        submitBtn.disabled = true;
-        submitBtn.classList.add('loading');
-
-        try {
-            // Simulate form submission (replace with actual API call)
-            await simulateFormSubmission(new FormData(form));
-            
-            // Success
-            showNotification('Message sent successfully! We\'ll get back to you soon.', 'success');
-            form.reset();
-            formFields.forEach(field => {
-                field.parentNode.classList.remove('focused');
-                field.classList.remove('error');
-            });
-
-        } catch (error) {
-            showNotification('Failed to send message. Please try again.', 'error');
-        } finally {
-            // Reset button state
-            submitBtn.textContent = originalText;
-            submitBtn.disabled = false;
-            submitBtn.classList.remove('loading');
-        }
-    };
+    } catch (error) {
+        showNotification('Failed to send message. Please try again.', 'error');
+        console.error('EmailJS Error:', error);
+    } finally {
+        // Reset button state
+        submitBtn.textContent = originalText;
+        submitBtn.disabled = false;
+        submitBtn.classList.remove('loading');
+    }
+};
 
     form.addEventListener('submit', handleSubmit);
 
