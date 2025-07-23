@@ -20,7 +20,9 @@
 
 .btn-primary {
     background: var(--gradient-primary);
-    color: var(--text-primary);
+    /* color: var(--text-primary);
+     */
+    color: black;
     box-shadow: var(--shadow-glow);
 }
 
